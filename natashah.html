@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love</title>
+  <!-- Import Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #a8d0e6, #f6c1c7);
+      color: #333;
+      text-align: center;
+    }
+    h1, h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5em;
+      color: #444;
+      margin-bottom: 20px;
+    }
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 20px auto;
+      max-width: 700px;
+    }
+    button {
+      font-family: 'Poppins', sans-serif;
+      background: #f6c1c7;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #a8d0e6;
+      color: white;
+    }
+    img {
+      max-width: 60%; /* default smaller photo size */
+      border-radius: 12px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    /* Special styling for Page 3 image */
+    #page3 img {
+      max-width: 40%; /* smaller just for the last page */
+    }
+    video {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .video-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px auto;
+      max-width: 90%;
+    }
+    .video-section p {
+      font-family: 'Dancing Script', cursive;
+      font-size: 20px;
+      color: #444;
+      max-width: 300px;
+      text-align: left;
+    }
+    .page {
+      display: none;
+      min-height: 100vh;
+      padding: 40px;
+    }
+    .active {
+      display: block;
+    }
+    .scrollable {
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1 -->
+  <div id="page1" class="page active">
+    <h1>kamu mesti tahu setiap pasangan berbeza cara mereka hargai pasangan mereka sendiri, jadi inilah cara saya dengan seikhlas hati saya buat. enjoy sayanggg!! 💖</h1>
+    <button onclick="goToPage(2)">tekan sini sayang</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div id="page2" class="page scrollable">
+    <h2>ini khas untuk awak sayang 💕</h2>
+    <p>Fatin Natashah binti Zakaria, indah namamu seindah rupamu.
+Seolah-olah setiap huruf pada namamu dicipta dengan doa, dan setiap senyumanmu hadir dengan cahaya.
+Cantikmu bukan hanya pada wajah, tapi pada cara kau membuat dunia terasa lebih lembut dan bermakna. 🌸</p>
+    <!-- First Photo -->
+    <img src="SAYANG 1.jpeg" alt="Beautiful memory">
+    <!-- Video + Words beside -->
+    <div class="video-section">
+      <video src="SAYANG.mp4" autoplay muted loop></video>
+      <p>
+        Dalam hidup, kita semua cipta kenangan,<br>
+        Ada yang manis, ada yang menguatkan. 💕<br>
+        Ada senyuman yang pernah hadir,<br>
+        dan ada juga yang pernah hilang. ✨<br>
+        Ini kenangan kecil yang saya cipta,<br>
+        supaya senyuman itu kembali mekar semula. 🌹
+      </p>
+    </div>
+    <!-- Second Photo -->
+    <img src="SAYANG 2.jpeg" alt="Another sweet memory">
+    <p>Benar, ada berjuta wanita di dunia.
+Ramai yang bernama Fatin, ramai juga yang bernama Natashah.
+
+Tapi takkan pernah sama,
+dan takkan pernah ada yang seperti
+satu-satunya Fatin Natashah ini. 🤍 </p>
+    <button onclick="goToPage(3)">tekan sini pula sayang 💙</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div id="page3" class="page">
+    <h2>untuk kamu sayang, terima kasih untuk segalanya 💖</h2>
+    <p>Untuk kamu,
+yang baiknya menenangkan hati,
+dan cantiknya tak pernah jemu dipandang.
+
+Entah kenapa,
+setiap kali saya tengok mata kamu,
+setiap kali itu jugalah saya jatuh cinta,
+berulang kali, tanpa rasa bosan.
+
+Kamu buat saya percaya
+bahawa cinta itu memang wujud,
+dan ia tak sama seperti yang pernah saya hadap dulu.
+dengan kamu, cinta terasa lebih matang, lebih tenang, lebih benar.
+
+Kita bukan manusia yang sempurna.
+Kekurangan itu pasti ada,
+tapi mungkin kerana itulah kita saling melengkapi,
+menyempurnakan antara satu sama lain,
+seperti maksud lagu ini yang ingin aku sampaikan.
+
+Jika suatu hari nanti saya lupa cara untuk tersenyum,
+pandanglah saya seperti mana saya memandangmu hari ini —
+dengan penuh rasa syukur,
+kerana memiliki kamu sudah cukup membuat dunia terasa indah. 🌹</p>
+    <!-- One Picture (smaller size) -->
+    <img src="SAYANG 3.jpeg" alt="Us together">
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" src="sempurna.mp3"></audio>
+
+  <script>
+    let currentPage = 1;
+    const music = document.getElementById('bgMusic');
+    const page2 = document.getElementById('page2');
+    let scrollInterval;
+
+    function goToPage(pageNumber) {
+      document.getElementById(`page${currentPage}`).classList.remove('active');
+      document.getElementById(`page${pageNumber}`).classList.add('active');
+      currentPage = pageNumber;
+
+      if (pageNumber === 2 && music.paused) {
+        music.play();
+        startAutoScroll(); // start auto-scroll immediately
+      }
+    }
+
+    // Auto-scroll function (faster)
+    function startAutoScroll() {
+      scrollInterval = setInterval(() => {
+        page2.scrollBy(0, 2); // scroll 2px each step
+      }, 30); // every 30ms
+    }
+
+    // Allow her to stop auto-scroll if she wants to control it
+    page2.addEventListener('touchstart', () => clearInterval(scrollInterval));
+    page2.addEventListener('mousedown', () => clearInterval(scrollInterval));
+  </script>
+
+</body>
+</html>
